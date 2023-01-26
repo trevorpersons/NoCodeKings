@@ -1,0 +1,23 @@
+import pandas as pd
+import requests
+
+url = 'https://www.example.com/data.csv'
+response = requests.get(url)
+open('data.csv', 'wb').write(response.content)
+
+df = pd.read_csv('data.csv')
+df.to_excel('data.xlsx', index=False)
+
+import openpyxl
+
+url = "https://www.example.com/data.csv"
+response = requests.get(url)
+open('data.csv', 'wb').write(response.content)
+
+wb = openpyxl.Workbook()
+ws = wb.active
+with open("data.csv", "r") as f:
+    for row in csv.reader(f):
+        ws.append(row)
+wb.save("data.xlsx")
+
