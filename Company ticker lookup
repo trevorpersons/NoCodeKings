@@ -1,0 +1,11 @@
+def get_company_data(ticker):
+    url = f'https://api.example.com/stock/{ticker}'
+    response = requests.get(url)
+    data = response.json()
+    return data
+
+ticker = input("Enter the ticker symbol of the company you're looking for: ")
+company_data = get_company_data(ticker)
+print(company_data)
+
+
