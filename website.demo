@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to my website</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Section 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor aliquam est, nec pulvinar metus consequat vel. Sed consectetur nisl in ultricies sodales. Suspendisse a arcu eget dolor malesuada eleifend vel vel massa. Fusce at odio vel arcu sagittis malesuada in sit amet leo.</p>
+      </section>
+      <section>
+        <h2>Section 2</h2>
+        <p>Curabitur hendrerit mi id diam sagittis, nec varius urna eleifend. Quisque at commodo lectus. Fusce posuere, felis quis elementum commodo, odio nunc gravida lorem, a auctor purus justo sed purus. Maecenas semper euismod ex, vitae commodo lorem consequat ac.</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Website</p>
+    </footer>
+  </body>
+</html>
