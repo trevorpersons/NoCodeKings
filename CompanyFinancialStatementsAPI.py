@@ -8,6 +8,9 @@ except ImportError:
 import certifi
 import json
 
+print("Input the ticker symbol for the company you want to look up: ")
+ticker = input()
+
 def get_jsonparsed_data(url):
     """
     Receive the content of ``url``, parse it as JSON and return the object.
@@ -24,5 +27,5 @@ def get_jsonparsed_data(url):
     data = response.read().decode("utf-8")
     return json.loads(data)
 
-url = ("https://financialmodelingprep.com/api/v3/income-statement/AAPL?apikey=YOUR_API_KEY")
+url = ("https://financialmodelingprep.com/api/v3/income-statement/"+ticker+"?apikey=d2b1cf9beb66264ece3054788678d1b4")
 print(get_jsonparsed_data(url))

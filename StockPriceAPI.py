@@ -5,6 +5,9 @@ except ImportError:
     # Fall back to Python 2's urllib2
     from urllib2 import urlopen
 
+print("Input the ticker symbol for the company you want to look up: ")
+ticker = input()
+
 import certifi
 import json
 
@@ -24,5 +27,5 @@ def get_jsonparsed_data(url):
     data = response.read().decode("utf-8")
     return json.loads(data)
 
-url = ("https://financialmodelingprep.com/api/v3/quote/AAPL,FB?apikey=YOUR_API_KEY")
+url = ("https://financialmodelingprep.com/api/v3/quote/"+ticker+",FB?apikey=d2b1cf9beb66264ece3054788678d1b4")
 print(get_jsonparsed_data(url))
