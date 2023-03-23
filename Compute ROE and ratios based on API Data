@@ -1,0 +1,32 @@
+import requests
+
+# Define the API endpoint and parameters
+symbol = 'AAPL'
+api_key = 'd2b1cf9beb66264ece3054788678d1b4'
+url = f'https://financialmodelingprep.com/api/v3/profile/{symbol}?apikey={api_key}'
+
+# Fetch the financial data from the API
+response = requests.get(url)
+data = response.json()[0]
+
+# Extract the necessary financial data
+earnings_per_share = data['eps']
+current_stock_price = data['price']
+annual_dividend = data['lastDiv']
+
+# Calculate the P/E ratio
+p_e_ratio = current_stock_price / earnings_per_share
+
+# Calculate the dividend yield
+dividend_yield = annual_dividend / current_stock_price
+
+# Calculate the ROE
+net_income = data['netIncome']
+total_shareholders_equity = data['shareholderEquity']
+average_shareholders_equity = (total_shareholders_equity + data['previousTotalShareholdersEquity']) / 2
+roe = net_income / average_shareholders_equity
+
+# Print the results
+print('P/E Ratio:', p_e_ratio)
+print('Dividend Yield:', dividend_yield)
+print('ROE:', roe)
