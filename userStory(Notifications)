@@ -1,3 +1,4 @@
+
 index = 0
 region = ["NA","LAD","EMEA","APAC"]
 industry = []
@@ -11,8 +12,6 @@ userPricehigh = input()
 print("At what point dollar amount you want a notification when the stock price decreases?")
 userPricelow = input()
 
-while loop == 0:
-    if stockPrice !=0:
         
         
 
