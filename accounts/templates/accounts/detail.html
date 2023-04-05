@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <dl>
+    <dt>Username</dt>
+    <dd>{{ user.username }}</dd>
+    <dt>User ID</dt>
+    <dd>{{ user.user_id }}</dd>
+    <dt>Email</dt>
+    <dd>{{ user.email }}</dd>
+  </dl>
+{% endblock  %}
