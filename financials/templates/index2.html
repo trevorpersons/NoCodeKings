@@ -1,6 +1,58 @@
-<form method="post" action="{% url 'stock_info' %}">
+<head>
+    <style type="text/css">
+    .stock-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.15s ease-in-out,
+              border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  box-shadow: 0 0.5rem 1rem rgba(0, 123, 255, 0.5);
+}
+
+    </style>
+</head>
+
+<form class="stock-form" method="post" action="{% url 'stock_info' %}">
     {% csrf_token %}
-    <label for="symbol">Enter a stock symbol:</label>
-    <input type="text" id="symbol" name="symbol">
-    <button type="submit">Submit</button>
-</form>
+    <div class="form-group">
+      <label for="symbol">Enter a stock symbol:</label>
+      <input type="text" id="symbol" name="symbol" class="form-control" placeholder="AAPL">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
