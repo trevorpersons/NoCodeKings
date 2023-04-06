@@ -1,4 +1,3 @@
-{% extends 'base.html' %}
 
 <form method="GET" action="{% url 'stock_info' symbol='' %}">
     <input type="text" name="symbol" placeholder="Enter stock symbol">
@@ -12,4 +11,18 @@
     <p>Stock Change: {{ change }}</p>
     <p>Stock Change Percentage: {{ change_pct }}</p>
   {% endif %}
-  
+
+  <form method="POST">
+    {% csrf_token %}
+    <label for="symbol">Enter stock symbol:</label>
+    <input type="text" name="symbol" id="symbol">
+    <button type="submit">Submit</button>
+</form>
+
+{% if stock_data %}
+    <h2>{{ stock_data.symbol }}</h2>
+    <p>Name: {{ stock_data.name }}</p>
+    <p>Price: {{ stock_data.price }}</p>
+    <p>Change: {{ stock_data.change }}</p>
+    <p>Change %: {{ stock_data.changesPercentage }}</p>
+{% endif %}
