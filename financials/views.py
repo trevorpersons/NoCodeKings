@@ -6,9 +6,8 @@ import requests
 def index(request):
     return HttpResponse("Hello")
 
-def stock_info(request):
+def stock_info(request, symbol):
     api_key = 'd2b1cf9beb66264ece3054788678d1b4'
-    symbol = 'AAPL'  # Replace with the stock symbol of your choice
 
     url = f'https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={api_key}'
     response = requests.get(url)
