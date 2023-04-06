@@ -6,6 +6,5 @@ urlpatterns = [
 
     path('stock_info/', views.stock_info, name='stock_info'),
 
-    path('stock_info/<str:symbol>/', views.stock_info, name='stock_info'),
 ]
 
