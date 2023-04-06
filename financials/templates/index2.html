@@ -1,0 +1,6 @@
+<form method="post" action="{% url 'stock_info' %}">
+    {% csrf_token %}
+    <label for="symbol">Enter a stock symbol:</label>
+    <input type="text" id="symbol" name="symbol">
+    <button type="submit">Submit</button>
+</form>
