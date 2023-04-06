@@ -1,11 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import requests
+import request
 
 # Create your views here.
-def index(request):
-    return HttpResponse("Hello")
-
 def stock_info(request, symbol):
     api_key = 'd2b1cf9beb66264ece3054788678d1b4'
 
