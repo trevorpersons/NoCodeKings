@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import requests
-import request
+
 
 # Create your views here.
 def stock_info(request, symbol):
