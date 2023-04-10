@@ -9,5 +9,7 @@ urlpatterns = [
 
     path('stock_info/<str:symbol>/', views.stock_info, name='stock_info_symbol'),
 
+    path('stock_chart/<str:symbol>/', views.stock_chart, name='stock_chart'),
+
 ]
 
