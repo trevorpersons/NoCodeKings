@@ -14,7 +14,7 @@ def stock_info(request):
     else:
         symbol = 'AAPL'
 
-    url = f'https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={api_key}'
+    url = f'https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={api_key}&exchange=NYSE,NASDAQ'
     response = requests.get(url)
     stock_data = response.json()
 
