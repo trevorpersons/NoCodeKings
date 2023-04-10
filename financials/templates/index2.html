@@ -3,5 +3,7 @@
     <label for="symbol">Enter a stock symbol:</label>
     <input type="text" id="symbol" name="symbol">
     <button type="submit">Submit</button>
+    {% if symbol %}
+        <input type="hidden" name="symbol" value="{{ symbol }}">
+    {% endif %}
 </form>
-
