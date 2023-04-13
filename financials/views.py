@@ -28,3 +28,5 @@ def stock_info(request):
 
     return render(request, 'stock_info.html', context)
 
+
+
