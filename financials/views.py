@@ -4,8 +4,11 @@ import plotly.graph_objs as go
 import requests
 
 # Create your views here.
+
+
 def index(request):
     return render(request, 'index2.html')
+
 
 def stock_info(request):
     api_key = 'd2b1cf9beb66264ece3054788678d1b4'
@@ -28,6 +31,7 @@ def stock_info(request):
     }
 
     return render(request, 'stock_info.html', context)
+
 
 def stock_chart(request, symbol=None):
     api_key = 'd2b1cf9beb66264ece3054788678d1b4'
@@ -75,4 +79,3 @@ def stock_chart(request, symbol=None):
         'chart_div': chart_div
     }
     return render(request, 'stock_chart.html', context)
-

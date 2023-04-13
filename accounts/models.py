@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-import random
 
 # Create your models here.
 
@@ -14,7 +13,7 @@ class Account(models.Model):
 
 class User(models.Model):
     username = models.CharField(max_length=255)
-    user_id = models.IntegerField(default=random.randint(1, 1000))
+    user_id = models.IntegerField()
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     date_of_birth = models.DateField()
