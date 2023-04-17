@@ -20,17 +20,31 @@
         a:hover {
             text-decoration: underline;
         }
+        .link-box {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Welcome to Our Homepage</h1>
     <p>Other Pages:</p>
-    <ul>
+    
+        <div class="link-box">
         <a href="{% url 'movies:index' %}">Movies</a>
+        </div>
+
+        <div class="link-box">
         <a href="{% url 'accounts:index' %}">Accounts</a>
+        </div>
+
+        <div class="link-box">
         <a href="{% url 'financials_index' %}">Financials</a>
-    </ul>
+        </div>
 </body>
 
 </html>
