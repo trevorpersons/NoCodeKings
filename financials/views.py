@@ -33,13 +33,8 @@ def stock_info(request):
     return render(request, 'stock_info.html', context)
 
 
-def stock_chart(request, symbol=None):
+def stock_chart(request, symbol):
     api_key = 'd2b1cf9beb66264ece3054788678d1b4'
-
-    if request.method == 'POST':
-        symbol = request.POST.get('symbol', 'AAPL')
-    else:
-        symbol = 'AAPL'
 
     # Get stock price data from API
     url = f'https://financialmodelingprep.com/api/v3/historical-price-full/{symbol}?apikey={api_key}'
@@ -79,3 +74,4 @@ def stock_chart(request, symbol=None):
         'chart_div': chart_div
     }
     return render(request, 'stock_chart.html', context)
+
