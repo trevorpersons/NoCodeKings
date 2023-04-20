@@ -1,57 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<<<<<<< HEAD
-<a href="{% url 'movies:index' %}">Movies</a>
-<a href="{% url 'accounts:index' %}">Accounts</a>
-<a href="{% url 'financials_index' %}">Financials</a>
-=======
+<div style="text-align: center;">
+    <!DOCTYPE html>
+    <html>
 
-<!DOCTYPE html>
-<html>
+    <head>
+        <title>Financial Web Application - Home </title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
 
-<head>
-    <title>Financial Web Application - Home </title>
-    <style> 
-        body {
-            font-family: Arial, sans-serif;
-        }
+            a {
+                color: blue;
+                text-decoration: none;
+            }
 
-        a {
-            color: blue;
-            text-decoration: none;
-        }
+            a:hover {
+                text-decoration: underline;
+            }
 
-        a:hover {
-            text-decoration: underline;
-        }
-        .link-box {
-        display: inline-block;
-        margin-right: 20px;
-        padding: 10px;
-        border: 1px solid black;
-        border-radius: 5px;
-        }
-    </style>
-</head>
+            .link-box {
+                display: inline-block;
+                margin-right: 20px;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
 
-<body>
-    <h1>Welcome to Our Homepage</h1>
-    <p>Other Pages:</p>
-    
+    <body>
+        <h1>Welcome to Our Homepage</h1>
+        <p>Other Pages:</p>
+
         <div class="link-box">
-        <a href="{% url 'movies:index' %}">Movies</a>
+            <a href="{% url 'movies:index' %}">Movies</a>
         </div>
 
         <div class="link-box">
-        <a href="{% url 'accounts:index' %}">Accounts</a>
+            <a href="{% url 'accounts:index' %}">Accounts</a>
         </div>
 
         <div class="link-box">
-        <a href="{% url 'financials_index' %}">Financials</a>
+            <a href="{% url 'financials_index' %}">Financials</a>
         </div>
-</body>
+    </body>
 
-</html>
->>>>>>> ce45478b2fede156349f4607471e9f0b55086989
-{% endblock  %}
+    </html>
+</div>
+{% endblock %}
