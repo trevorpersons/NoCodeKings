@@ -73,6 +73,7 @@
         <h1 class="enlarge">{{ symbol }}</h1>
         <p class="emphasis">{{ name }}</p>
         <p class="enlarge">{{ price }}</p>
+        <p>Price:</p>
     </div>
     <div class="right-column">
         <div class="details">
@@ -86,3 +87,19 @@
         <div class="details">
             <p class="detail-left">Year Low:</p>
             <p class="detail-right">{{ yearLow }}</p>
+        </div>
+        <div class="details">
+            <p class="detail-left">Year High:</p>
+            <p class="detail-right">{{ yearHigh }}</p>
+        </div>
+    </div>
+    <div class="center-column">
+        <p class="enlarge">{{ price }}</p>
+        <p>Change:</p>
+        <p class="emphasis">{{ change }}</p>
+        <p>({{ change_pct }})</p>
+        <p>Market Cap: {{ marketCap }}</p>
+        <p>Exchange: {{ exchange }}</p>
+        <a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
+    </div>
+</div>
