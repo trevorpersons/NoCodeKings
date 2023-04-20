@@ -28,6 +28,8 @@ def stock_info(request):
         'price': stock_data[0]['price'],
         'dayLow': stock_data[0]['dayLow'],
         'dayHigh': stock_data[0]['dayHigh'],
+        'yearLow': stock_data[0]['yearLow'],
+        'yearHigh': stock_data[0]['yearHigh'],
         'change': stock_data[0]['change'],
         'change_pct': stock_data[0]['changesPercentage'],
     }
