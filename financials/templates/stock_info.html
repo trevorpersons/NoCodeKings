@@ -13,37 +13,33 @@
     .emphasis {
         font-weight: bold;
         font-style: italic;
-        margin-top: -20px;
     }
 
-    .data-container {
+    .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 10px 0;
+        margin: 10px auto;
+        max-width: 600px;
     }
 
-    .data-container-left {
+    .left-container {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-right: 20px;
+        width: 50%;
     }
 
-    .data-container-right {
+    .right-container {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-    }
-
-    .label {
-        font-size: 20px;
-        font-weight: bold;
+        width: 50%;
     }
 
     .data {
-        font-size: 24px;
         margin-left: 10px;
+        font-size: 24px;
     }
 
     a {
@@ -57,36 +53,40 @@
         font-size: 72px;
     }
 </style>
+
 <h1 class="enlarge">{{ symbol }}</h1>
 <p class="emphasis">{{ name }}</p>
-<div class="data-container">
-    <div class="data-container-left">
-        <div>
-            <p class="label">Price:</p>
-            <p class="label">Change:</p>
-            <p class="label">Day Low:</p>
-            <p class="label">Day High:</p>
+
+<div class="container">
+    <div class="left-container">
+        <div class="data">
+            <p>Price:</p>
+            <p>Change:</p>
+            <p>Day Low:</p>
+            <p>Day High:</p>
         </div>
-        <div>
-            <p class="data enlarge">{{ price }}</p>
-            <p class="data">{{ change }} ({{ change_pct }})</p>
-            <p class="data">{{ dayLow }}</p>
-            <p class="data">{{ dayHigh }}</p>
+        <div class="data">
+            <p>{{ price }}</p>
+            <p>{{ change }} ({{ change_pct }})</p>
+            <p>{{ dayLow }}</p>
+            <p>{{ dayHigh }}</p>
         </div>
     </div>
-    <div class="data-container-right">
-        <div>
-            <p class="label">Year Low:</p>
-            <p class="label">Year High:</p>
-            <p class="label">Market Cap:</p>
-            <p class="label">Exchange:</p>
+
+    <div class="right-container">
+        <div class="data">
+            <p>Year Low:</p>
+            <p>Year High:</p>
+            <p>Market Cap:</p>
+            <p>Exchange:</p>
         </div>
-        <div>
-            <p class="data">{{ yearLow }}</p>
-            <p class="data">{{ yearHigh }}</p>
-            <p class="data">{{ marketCap }}</p>
-            <p class="data">{{ exchange }}</p>
+        <div class="data">
+            <p>{{ yearLow }}</p>
+            <p>{{ yearHigh }}</p>
+            <p>{{ marketCap }}</p>
+            <p>{{ exchange }}</p>
         </div>
     </div>
 </div>
+
 <a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
