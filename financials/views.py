@@ -26,12 +26,12 @@ def stock_info(request):
         'symbol': stock_data[0]['symbol'],
         'name': stock_data[0]['name'],
         'price': stock_data[0]['price'],
+        'change': stock_data[0]['change'],
+        'change_pct': stock_data[0]['changesPercentage'],
         'dayLow': stock_data[0]['dayLow'],
         'dayHigh': stock_data[0]['dayHigh'],
         'yearLow': stock_data[0]['yearLow'],
         'yearHigh': stock_data[0]['yearHigh'],
-        'change': stock_data[0]['change'],
-        'change_pct': stock_data[0]['changesPercentage'],
     }
 
     return render(request, 'stock_info.html', context)
