@@ -1,11 +1,71 @@
-<h1>{{ symbol }}</h1>
-<p>{{ name }}</p>
-<p>Price: {{ price }}</p>
-<p>Change: {{ change }} ({{ change_pct }})</p>
-<p>Day Low: {{ dayLow }}</p>
-<p>Day High: {{ dayHigh }}</p>
-<p>Year Low: {{ yearLow }}</p>
-<p>Year High: {{ yearHigh }}</p>
-<p>Market Cap: {{ marketCap }}</p>
-<p>Exchange: {{ exchange }}</p>
+<style>
+    h1 {
+        text-align: center;
+        font-size: 48px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .emphasis {
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .space {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .enlarge {
+        font-size: 72px;
+    }
+</style>
+
+<h1 class="enlarge">{{ symbol }}</h1>
+<p class="emphasis">{{ name }}</p>
+<div class="space">
+    <p>Price:</p>
+    <p class="enlarge">{{ price }}</p>
+</div>
+<div class="space">
+    <p>Change:</p>
+    <p>{{ change }} ({{ change_pct }})</p>
+</div>
+<div class="space">
+    <p>Day Low:</p>
+    <p>{{ dayLow }}</p>
+</div>
+<div class="space">
+    <p>Day High:</p>
+    <p>{{ dayHigh }}</p>
+</div>
+<div class="space">
+    <p>Year Low:</p>
+    <p>{{ yearLow }}</p>
+</div>
+<div class="space">
+    <p>Year High:</p>
+    <p>{{ yearHigh }}</p>
+</div>
+<div class="space">
+    <p>Market Cap:</p>
+    <p>{{ marketCap }}</p>
+</div>
+<div class="space">
+    <p>Exchange:</p>
+    <p>{{ exchange }}</p>
+</div>
 <a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
