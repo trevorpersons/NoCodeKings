@@ -33,8 +33,6 @@ def stock_info(request):
     return render(request, 'stock_info.html', context)
 
 
-<<<<<<< HEAD
-=======
 def stock_chart(request, symbol):
     api_key = 'd2b1cf9beb66264ece3054788678d1b4'
 
@@ -76,5 +74,4 @@ def stock_chart(request, symbol):
         'chart_div': chart_div
     }
     return render(request, 'stock_chart.html', context)
->>>>>>> ce45478b2fede156349f4607471e9f0b55086989
 
