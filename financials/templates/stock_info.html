@@ -15,11 +15,21 @@
         font-style: italic;
     }
 
-    .space {
+    .details {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 10px 0;
+    }
+
+    .detail-left {
+        text-align: left;
+        flex: 1;
+    }
+
+    .detail-right {
+        text-align: right;
+        flex: 1;
     }
 
     a {
@@ -36,36 +46,36 @@
 
 <h1 class="enlarge">{{ symbol }}</h1>
 <p class="emphasis">{{ name }}</p>
-<div class="space">
-    <p>Price:</p>
-    <p class="enlarge">{{ price }}</p>
+<div class="details">
+    <p class="detail-left">Price:</p>
+    <p class="enlarge detail-right">{{ price }}</p>
 </div>
-<div class="space">
-    <p>Change:</p>
-    <p>{{ change }} ({{ change_pct }})</p>
+<div class="details">
+    <p class="detail-left">Change:</p>
+    <p class="detail-right">{{ change }} ({{ change_pct }})</p>
 </div>
-<div class="space">
-    <p>Day Low:</p>
-    <p>{{ dayLow }}</p>
+<div class="details">
+    <p class="detail-left">Day Low:</p>
+    <p class="detail-right">{{ dayLow }}</p>
 </div>
-<div class="space">
-    <p>Day High:</p>
-    <p>{{ dayHigh }}</p>
+<div class="details">
+    <p class="detail-left">Day High:</p>
+    <p class="detail-right">{{ dayHigh }}</p>
 </div>
-<div class="space">
-    <p>Year Low:</p>
-    <p>{{ yearLow }}</p>
+<div class="details">
+    <p class="detail-left">Year Low:</p>
+    <p class="detail-right">{{ yearLow }}</p>
 </div>
-<div class="space">
-    <p>Year High:</p>
-    <p>{{ yearHigh }}</p>
+<div class="details">
+    <p class="detail-left">Year High:</p>
+    <p class="detail-right">{{ yearHigh }}</p>
 </div>
-<div class="space">
-    <p>Market Cap:</p>
-    <p>{{ marketCap }}</p>
+<div class="details">
+    <p class="detail-left">Market Cap:</p>
+    <p class="detail-right">{{ marketCap }}</p>
 </div>
-<div class="space">
-    <p>Exchange:</p>
-    <p>{{ exchange }}</p>
+<div class="details">
+    <p class="detail-left">Exchange:</p>
+    <p class="detail-right">{{ exchange }}</p>
 </div>
 <a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
