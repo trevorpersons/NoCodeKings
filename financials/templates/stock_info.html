@@ -42,40 +42,53 @@
     .enlarge {
         font-size: 72px;
     }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .left-side {
+        flex: 1;
+    }
+
+    .right-side {
+        flex: 1;
+        text-align: right;
+    }
 </style>
 
-<h1 class="enlarge">{{ symbol }}</h1>
-<p class="emphasis">{{ name }}</p>
-<div class="details">
-    <p class="detail-left">Price:</p>
-    <p class="enlarge detail-right">{{ price }}</p>
-</div>
-<div class="details">
-    <p class="detail-left">Change:</p>
-    <p class="detail-right">{{ change }} ({{ change_pct }})</p>
-</div>
-<div class="details">
-    <p class="detail-left">Day Low:</p>
-    <p class="detail-right">{{ dayLow }}</p>
-</div>
-<div class="details">
-    <p class="detail-left">Day High:</p>
-    <p class="detail-right">{{ dayHigh }}</p>
-</div>
-<div class="details">
-    <p class="detail-left">Year Low:</p>
-    <p class="detail-right">{{ yearLow }}</p>
-</div>
-<div class="details">
-    <p class="detail-left">Year High:</p>
-    <p class="detail-right">{{ yearHigh }}</p>
-</div>
-<div class="details">
-    <p class="detail-left">Market Cap:</p>
-    <p class="detail-right">{{ marketCap }}</p>
-</div>
-<div class="details">
-    <p class="detail-left">Exchange:</p>
-    <p class="detail-right">{{ exchange }}</p>
-</div>
-<a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
+<div class="container">
+    <div class="left-side">
+        <h1 class="enlarge">{{ symbol }}</h1>
+        <p class="emphasis">{{ name }}</p>
+        <div class="details">
+            <p class="detail-left">Price:</p>
+            <p class="enlarge detail-right">{{ price }}</p>
+        </div>
+        <div class="details">
+            <p class="detail-left">Change:</p>
+            <p class="detail-right">{{ change }} ({{ change_pct }})</p>
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="details">
+            <p class="detail-left">Day Low:</p>
+            <p class="detail-right">{{ dayLow }}</p>
+        </div>
+        <div class="details">
+            <p class="detail-left">Day High:</p>
+            <p class="detail-right">{{ dayHigh }}</p>
+        </div>
+        <div class="details">
+            <p class="detail-left">Year Low:</p>
+            <p class="detail-right">{{ yearLow }}</p>
+        </div>
+        <div class="details">
+            <p class="detail-left">Year High:</p>
+            <p class="detail-right">{{ yearHigh }}</p>
+        </div
