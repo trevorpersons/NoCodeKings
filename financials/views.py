@@ -26,6 +26,8 @@ def stock_info(request):
         'symbol': stock_data[0]['symbol'],
         'name': stock_data[0]['name'],
         'price': stock_data[0]['price'],
+        'dayLow': stock_data[0]['dayLow'],
+        'dayHigh': stock_data[0]['dayHigh'],
         'change': stock_data[0]['change'],
         'change_pct': stock_data[0]['changesPercentage'],
     }
