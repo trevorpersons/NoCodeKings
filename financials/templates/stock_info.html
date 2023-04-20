@@ -1,23 +1,12 @@
 <style>
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
     h1 {
         text-align: center;
-        font-size: 72px;
-        flex-basis: 100%;
+        font-size: 48px;
     }
 
     p {
         text-align: center;
-        font-size: 36px;
+        font-size: 24px;
         margin: 10px 0;
     }
 
@@ -26,80 +15,82 @@
         font-style: italic;
     }
 
-    .details {
+    .space {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 10px 0;
     }
 
-    .detail-left {
-        text-align: left;
+    .label {
+        font-size: 20px;
+        font-weight: bold;
     }
 
-    .detail-right {
-        text-align: right;
+    .data {
+        font-size: 24px;
+        margin-left: 10px;
     }
 
-    .enlarge {
-        font-size: 48px;
-    }
-
-    .left-column {
-        flex: 1;
+    a {
+        display: block;
         text-align: center;
-        margin-right: 20px;
-    }
-
-    .right-column {
-        flex: 1;
-        text-align: center;
-        margin-left: 20px;
-    }
-
-    .center-column {
-        flex-basis: 100%;
-        text-align: center;
+        font-size: 24px;
         margin-top: 20px;
     }
 
-    .center-column p {
-        margin: 10px;
+    .enlarge {
+        font-size: 72px;
     }
 </style>
-
-<div class="container">
-    <div class="left-column">
-        <h1 class="enlarge">{{ symbol }}</h1>
-        <p class="emphasis">{{ name }}</p>
+<h1 class="enlarge">{{ symbol }}</h1>
+<p class="emphasis">{{ name }}</p>
+<div class="space">
+    <p>Price:</p>
+    <div class="data">
         <p class="enlarge">{{ price }}</p>
-        <p>Price:</p>
-    </div>
-    <div class="right-column">
-        <div class="details">
-            <p class="detail-left">Day Low:</p>
-            <p class="detail-right">{{ dayLow }}</p>
-        </div>
-        <div class="details">
-            <p class="detail-left">Day High:</p>
-            <p class="detail-right">{{ dayHigh }}</p>
-        </div>
-        <div class="details">
-            <p class="detail-left">Year Low:</p>
-            <p class="detail-right">{{ yearLow }}</p>
-        </div>
-        <div class="details">
-            <p class="detail-left">Year High:</p>
-            <p class="detail-right">{{ yearHigh }}</p>
-        </div>
-    </div>
-    <div class="center-column">
-        <p class="enlarge">{{ price }}</p>
-        <p>Change:</p>
-        <p class="emphasis">{{ change }}</p>
-        <p>({{ change_pct }})</p>
-        <p>Market Cap: {{ marketCap }}</p>
-        <p>Exchange: {{ exchange }}</p>
-        <a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
     </div>
 </div>
+<div class="space">
+    <p>Change:</p>
+    <div class="data">
+        <p>{{ change }} ({{ change_pct }})</p>
+    </div>
+</div>
+<div class="space">
+    <p>Day Low:</p>
+    <div class="data">
+        <p>{{ dayLow }}</p>
+    </div>
+</div>
+<div class="space">
+    <p>Day High:</p>
+    <div class="data">
+        <p>{{ dayHigh }}</p>
+    </div>
+</div>
+<div class="space">
+    <p>Year Low:</p>
+    <div class="data">
+        <p>{{ yearLow }}</p>
+    </div>
+</div>
+<div class="space">
+    <p>Year High:</p>
+    <div class="data">
+        <p>{{ yearHigh }}</p>
+    </div>
+</div>
+<div class="space">
+    <p>Market Cap:</p>
+    <div class="data">
+        <p>{{ marketCap }}</p>
+    </div>
+</div>
+<div class="space">
+    <p>Exchange:</p>
+    <div class="data">
+        <p>{{ exchange }}</p>
+    </div>
+</div>
+<a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
