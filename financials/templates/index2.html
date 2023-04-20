@@ -1,10 +1,55 @@
-<form method="post" action="{% url 'stock_info' %}">
-    {% csrf_token %}
-    <label for="symbol">Enter a stock symbol:</label>
-    <input type="text" id="symbol" name="symbol">
-    <button type="submit">Submit</button>
-    {% if symbol %}
-        <input type="hidden" name="symbol" value="{{ symbol }}">
-    {% endif %}
-</form>
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>My Form</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            font-size: 1.5em;
+        }
+
+        label {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0062cc;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="{% url 'stock_info' %}">
+        {% csrf_token %}
+        <label for="symbol">Enter a stock symbol:</label>
+        <input type="text" id="symbol" name="symbol">
+        <button type="submit">Submit</button>
+        {% if symbol %}
+        <input type="hidden" name="symbol" value="{{ symbol }}">
+        {% endif %}
+    </form>
+</body>
+
+</html>
