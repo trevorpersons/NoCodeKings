@@ -27,7 +27,7 @@ def stock_info(request):
         'name': stock_data[0]['name'],
         'price': stock_data[0]['price'],
         'change': stock_data[0]['change'],
-        'change_pct': stock_data[0]['changesPercentage'],
+        'change_pct': stock_data[0]['changesPercentage']+"%",
         'dayLow': stock_data[0]['dayLow'],
         'dayHigh': stock_data[0]['dayHigh'],
         'yearLow': stock_data[0]['yearLow'],
