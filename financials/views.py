@@ -32,6 +32,8 @@ def stock_info(request):
         'dayHigh': stock_data[0]['dayHigh'],
         'yearLow': stock_data[0]['yearLow'],
         'yearHigh': stock_data[0]['yearHigh'],
+        'marketCap': stock_data[0]['marketCap'],
+        'exchange': stock_data[0]['exchange'],
     }
 
     return render(request, 'stock_info.html', context)
