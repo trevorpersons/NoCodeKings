@@ -41,14 +41,23 @@
 </head>
 
 <body>
+
+    <datalist id="symbol_datalist">
+        {% for symbol in symbols %}
+        <option>{{symbol}}</option>
+        {% endfor %}
+    </datalist>
+
     <form method="post" action="{% url 'stock_info' %}">
         {% csrf_token %}
         <label for="symbol">Enter a stock symbol:</label>
-        <input type="text" id="symbol" name="symbol">
+        <input type="text" list="symbol_datalist" id="symbol" name="symbol">
+        <br>
         <button type="submit">Submit</button>
         {% if symbol %}
         <input type="hidden" name="symbol" value="{{ symbol }}">
         {% endif %}
+        <p style="color:red">{{ request.session.message }}</p>
     </form>
 </body>
 

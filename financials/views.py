@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import plotly.graph_objs as go
 import requests
 
@@ -7,7 +7,20 @@ import requests
 
 
 def index(request):
-    return render(request, 'index2.html')
+    
+    api_key = 'd2b1cf9beb66264ece3054788678d1b4'
+
+    url = f'https://financialmodelingprep.com/api/v3/financial-statement-symbol-lists?apikey={api_key}&exchange=NYSE,NASDAQ'
+    response = requests.get(url)
+    symbols = response.json()
+
+
+
+    symbol_dict = {
+        'symbols':symbols
+    }
+
+    return render(request, 'index2.html', symbol_dict)
 
 
 def stock_info(request):
@@ -21,23 +34,13 @@ def stock_info(request):
     url = f'https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={api_key}&exchange=NYSE,NASDAQ'
     response = requests.get(url)
     stock_data = response.json()
-
-    context = {
-        'symbol': stock_data[0]['symbol'],
-        'name': stock_data[0]['name'],
-        'price': stock_data[0]['price'],
-        'change': stock_data[0]['change'],
-        'change_pct': stock_data[0]['changesPercentage'],
-        'dayLow': stock_data[0]['dayLow'],
-        'dayHigh': stock_data[0]['dayHigh'],
-        'yearLow': stock_data[0]['yearLow'],
-        'yearHigh': stock_data[0]['yearHigh'],
-        'marketCap': stock_data[0]['marketCap'],
-        'exchange': stock_data[0]['exchange'],
-    }
-
-    return render(request, 'stock_info.html', context)
-
+    
+    if len(stock_data) > 0 and type(stock_data) == list:
+        request.session['message'] = ""
+        return render(request, 'stock_info.html', stock_data[0])
+    else:
+        request.session['message'] = "Invalid symbol"
+        return redirect("../")
 
 def stock_chart(request, symbol):
     api_key = 'd2b1cf9beb66264ece3054788678d1b4'
