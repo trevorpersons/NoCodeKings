@@ -14,7 +14,9 @@ def index(request):
     response = requests.get(url)
     symbols = response.json()
 
-
+    for symbol in symbols:
+        if isinstance(symbol, dict) and "symbol" in symbol and not symbol["symbol"].isdigit():
+            symbols.append(symbol)
 
     symbol_dict = {
         'symbols':symbols
@@ -34,6 +36,21 @@ def stock_info(request):
     url = f'https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={api_key}&exchange=NYSE,NASDAQ'
     response = requests.get(url)
     stock_data = response.json()
+
+
+    #stock data:
+    #symbol
+    #name
+    #price
+    #change
+    #changePercentage
+    #dayLow
+    #dayHigh
+    #yearLow
+    #yearHigh
+    #marketCap
+    #exchange
+
     
     if len(stock_data) > 0 and type(stock_data) == list:
         request.session['message'] = ""
