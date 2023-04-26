@@ -15,7 +15,7 @@ def index(request):
     symbols = response.json()
 
     for symbol in symbols:
-        if not symbol["symbol"].isdigit():
+        if isinstance(symbol, dict) and "symbol" in symbol and not symbol["symbol"].isdigit():
             symbols.append(symbol)
 
     symbol_dict = {
