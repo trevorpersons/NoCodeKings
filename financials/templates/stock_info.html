@@ -56,6 +56,18 @@
     .enlarge {
         font-size: 72px;
     }
+
+    /* Set color based on value of 'change' */
+    .positive {
+        color: green;
+    }
+
+    .negative {
+        color: red;
+    }
+    p.change {
+        font-weight: bold;
+    }
 </style>
 
 <h1 class="enlarge">{{ symbol }}</h1>
@@ -71,7 +83,8 @@
         </div>
         <div class="data">
             <p>&#36;{{ price }}</p>
-            <p>{{ change }} ({{ changesPercentage }}&#37;)</p>
+        <p class="change {% if change < 0 %}negative{% else %}positive{% endif %}">&#36;{{ change }} ({{ changesPercentage}}&#37;)</p>
+            </p>
             <p>&#36;{{ dayLow }}</p>
             <p>&#36;{{ dayHigh }}</p>
         </div>
