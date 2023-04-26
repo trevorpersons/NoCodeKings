@@ -43,7 +43,7 @@ def stock_info(request):
     #name
     #price
     #change
-    #change_pct
+    #changePercentage
     #dayLow
     #dayHigh
     #yearLow
