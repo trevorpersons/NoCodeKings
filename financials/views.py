@@ -21,14 +21,14 @@ def index(request):
             #symbols_no_numbers.append(i)
         
     symbol_dict = {
-        'symbols':symbols_no_numbers
+        'symbols':symbols
     }
 
     return render(request, 'index2.html', symbol_dict)
 
 
 def stock_info(request):
-    api_key = 'deaf732d59fb77c92a95fb2bafd74f126'
+    api_key = 'eaf732d59fb77c92a95fb2bafd74f126'
 
     if request.method == 'POST':
         symbol = request.POST.get('symbol', 'AAPL')
@@ -60,7 +60,7 @@ def stock_info(request):
         return redirect("../")
 
 def stock_chart(request, symbol):
-    api_key = 'd2b1cf9beb66264ece3054788678d1b4'
+    api_key = 'eaf732d59fb77c92a95fb2bafd74f126'
 
     # Get stock price data from API
     url = f'https://financialmodelingprep.com/api/v3/historical-price-full/{symbol}?apikey={api_key}'
