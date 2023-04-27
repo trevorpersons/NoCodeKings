@@ -56,41 +56,64 @@
     .enlarge {
         font-size: 72px;
     }
-</style>
 
+    .positive {
+        color: green;
+    }
+
+    .negative {
+        color: red;
+    }
+
+    p.change {
+        font-weight: bold;
+    }
+
+    .label {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .left-container p:not(.change),
+    .right-container p:not(.change) {
+        margin-bottom: 5px;
+    }
+
+
+</style>
 <h1 class="enlarge">{{ symbol }}</h1>
 <p class="emphasis">{{ name }}</p>
-
 <div class="container">
     <div class="left-container">
         <div class="data">
-            <p><strong>Price:</strong></p>
-            <p><strong>Change:</strong></p>
-            <p><strong>Day Low:</strong></p>
-            <p><strong>Day High:</strong></p>
-        </div>
-        <div class="data">
+            <p class="label">Price:</p>
             <p>&#36;{{ price }}</p>
-            <p>{{ change }} ({{ changesPercentage }}&#37;)</p>
+            <p class="label">Change:</p>
+{% if change < 0 %} <p class="change negative">&#36;{{ change }} ({{ changesPercentage|flatformat:2 }}&#37;)</p>
+    {% elif change > 0 %}
+    <p class="change positive">&#36;{{ change }} (+{{ changesPercentage|floatformat:2 }}&#37;)</p>
+    {% else %}
+    <p class="change">&#36;{{ change }}</p>
+    {% endif %}
+
+            <p class="label">Day Low:</p>
             <p>&#36;{{ dayLow }}</p>
+            <p class="label">Day High:</p>
             <p>&#36;{{ dayHigh }}</p>
         </div>
     </div>
 
     <div class="right-container">
         <div class="data">
-            <p><strong>Year Low:</strong></p>
-            <p><strong>Year High:</strong></p>
-            <p><strong>Market Cap:</strong></p>
-            <p><strong>Exchange:</strong></p>
-        </div>
-        <div class="data">
+            <p class="label">Year Low:</p>
             <p>&#36;{{ yearLow }}</p>
+            <p class="label">Year High:</p>
             <p>&#36;{{ yearHigh }}</p>
+            <p class="label">Market Cap:</p>
             <p>{{ marketCap }}</p>
+            <p class="label">Exchange:</p>
             <p>{{ exchange }}</p>
         </div>
     </div>
 </div>
-
 <a href="http://127.0.0.1:8000/financials/stock_chart/{{ symbol }}">Chart</a>
