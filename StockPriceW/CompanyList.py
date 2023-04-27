@@ -1,7 +1,7 @@
 import requests
 
 # Define the API endpoint URL
-url = "https://financialmodelingprep.com/api/v3/financial-statement-symbol-lists?apikey=d2b1cf9beb66264ece3054788678d1b4"
+url = "https://financialmodelingprep.com/api/v3/financial-statement-symbol-lists?apikey=eaf732d59fb77c92a95fb2bafd74f126"
 
 
 # Send a GET request to the API endpoint
@@ -15,7 +15,7 @@ if response.status_code == 200:
     print(len(data))
     
     
-    url1 = "https://financialmodelingprep.com/api/v3/quote/"+data[index]+",FB?apikey=d2b1cf9beb66264ece3054788678d1b4"
+    url1 = "https://financialmodelingprep.com/api/v3/quote/"+data[index]+",FB?apikey=eaf732d59fb77c92a95fb2bafd74f126"
     response1 = requests.get(url1)
     data1 = response1.json()
     print(data1)

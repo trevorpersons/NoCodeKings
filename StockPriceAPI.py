@@ -27,5 +27,5 @@ def get_jsonparsed_data(url):
     data = response.read().decode("utf-8")
     return json.loads(data)
 
-url = ("https://financialmodelingprep.com/api/v3/quote/"+ticker+",FB?apikey=d2b1cf9beb66264ece3054788678d1b4")
+url = ("https://financialmodelingprep.com/api/v3/quote/"+ticker+",FB?apikey=eaf732d59fb77c92a95fb2bafd74f126")
 print(get_jsonparsed_data(url))
