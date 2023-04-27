@@ -89,7 +89,7 @@
             <p class="label">Price:</p>
             <p>&#36;{{ price }}</p>
             <p class="label">Change:</p>
-{% if change < 0 %} <p class="change negative">&#36;{{ change }} ({{ changesPercentage }}&#37;)</p>
+{% if change < 0 %} <p class="change negative">&#36;{{ change }} ({{ changesPercentage|flatformat:2 }}&#37;)</p>
     {% elif change > 0 %}
     <p class="change positive">&#36;{{ change }} (+{{ changesPercentage|floatformat:2 }}&#37;)</p>
     {% else %}
