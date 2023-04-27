@@ -8,25 +8,27 @@ import requests
 
 def index(request):
     
-    api_key = 'd2b1cf9beb66264ece3054788678d1b4'
+    api_key = 'eaf732d59fb77c92a95fb2bafd74f126'
 
     url = f'https://financialmodelingprep.com/api/v3/financial-statement-symbol-lists?apikey={api_key}&exchange=NYSE,NASDAQ'
     response = requests.get(url)
     symbols = response.json()
 
-    for symbol in symbols:
-        if isinstance(symbol, dict) and "symbol" in symbol and not symbol["symbol"].isdigit():
-            symbols.append(symbol)
+    symbols_no_numbers=[]
 
+    #for i in symbols:
+        #if not i[0].isdigit:
+            #symbols_no_numbers.append(i)
+        
     symbol_dict = {
-        'symbols':symbols
+        'symbols':symbols_no_numbers
     }
 
     return render(request, 'index2.html', symbol_dict)
 
 
 def stock_info(request):
-    api_key = 'd2b1cf9beb66264ece3054788678d1b4'
+    api_key = 'deaf732d59fb77c92a95fb2bafd74f126'
 
     if request.method == 'POST':
         symbol = request.POST.get('symbol', 'AAPL')
@@ -36,7 +38,6 @@ def stock_info(request):
     url = f'https://financialmodelingprep.com/api/v3/quote/{symbol}?apikey={api_key}&exchange=NYSE,NASDAQ'
     response = requests.get(url)
     stock_data = response.json()
-
 
     #stock data:
     #symbol
@@ -51,7 +52,6 @@ def stock_info(request):
     #marketCap
     #exchange
 
-    
     if len(stock_data) > 0 and type(stock_data) == list:
         request.session['message'] = ""
         return render(request, 'stock_info.html', stock_data[0])
