@@ -3,9 +3,6 @@ from django.shortcuts import render, redirect
 import plotly.graph_objs as go
 import requests
 
-# Create your views here.
-
-
 def index(request):
     
     api_key = 'eaf732d59fb77c92a95fb2bafd74f126'
@@ -16,12 +13,12 @@ def index(request):
 
     symbols_no_numbers=[]
 
-    #for i in symbols:
-        #if not i[0].isdigit:
-            #symbols_no_numbers.append(i)
+    for i in symbols:
+        if not i[0].isdigit():
+            symbols_no_numbers.append(i)
         
     symbol_dict = {
-        'symbols':symbols
+        'symbols':symbols_no_numbers
     }
 
     return render(request, 'index2.html', symbol_dict)
@@ -51,8 +48,8 @@ def stock_info(request):
     #yearHigh
     #marketCap
     #exchange
-
-    if len(stock_data) > 0 and type(stock_data) == list:
+    
+    if response.status_code == 200:
         request.session['message'] = ""
         return render(request, 'stock_info.html', stock_data[0])
     else:
