@@ -36,10 +36,6 @@
         <p>Other Pages:</p>
 
         <div class="link-box">
-            <a href="{% url 'movies:index' %}">Movies</a>
-        </div>
-
-        <div class="link-box">
             <a href="{% url 'accounts:index' %}">Accounts</a>
         </div>
 
@@ -48,9 +44,7 @@
         </div>
 
         
-        {%  if user.is_authenticated %}
-            <p>You are logged in as {{ request.user }}. Click here to <a href="{% url 'logout' %}">log out</a></p>
-        {% endif %}
+
     </body>
 
     </html>

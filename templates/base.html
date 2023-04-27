@@ -8,11 +8,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Vidly</title>
+    <title>Financial Web Application - Home</title>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Vidly</a>
+        <a class="navbar-brand" href="#">Financial Web Application - Home</a>
+        {%  if user.is_authenticated %}
+        <p>You are logged in as {{ request.user }}. Click here to <a href="{% url 'logout' %}">log out</a></p>
+        {% endif %}
     </nav>
     <main class ="container">
         {% block content %}
