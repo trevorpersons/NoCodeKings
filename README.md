@@ -1,8 +1,8 @@
 NoCodeKings Senior Project
 
 1. How to use our application:
-i. Install VSCode
 
+i. Install VSCode
 ii. Clone our Github Repository which you should have access to we used:
 Git: https://www.geeksforgeeks.org/how-to-install-git-in-vs-code/ (this article helps)
 
@@ -20,6 +20,7 @@ vi. Installing Requests is done by running: pip install requests
 vii. Installing Plotly is done by running: pip install plotly
 
 2. Running the program:
+
 i. Start the program after everything is installed and you are in the virtual environment with the code: python manage.py runserver
 It should be accessible from: http://127.0.0.1:8000/
 ii. Enter into the Financials tab
