@@ -13,7 +13,7 @@ Move to step (iv) once you can see our files in your VSCode instance.
 
 At this point, we get into the Virtual Environment running. This will be a little hard to explain for us but we went ahead and installed it with: pipenv shell
 
-iv. After working on the .venv and running a script similar to this aimed at your cloned repo location (& c:/Users/Trevor/Documents/GitHub/NoCodeKings/.venv/Scripts/Activate.ps1) we move on to installing Django, Requests and Plotly
+iv. After working on the .venv and running a script similar to this aimed at your cloned repo location (&       c:/Users/Trevor/Documents/GitHub/NoCodeKings/.venv/Scripts/Activate.ps1) we move on to installing Django, Requests and Plotly
 
 v. Installing Django is done in the VSCode terminal by running: pip install django
 vi. Installing Requests is done by running: pip install requests
