@@ -49,7 +49,7 @@ def stock_info(request):
     #marketCap
     #exchange
     
-    if response.status_code == 200:
+    if response.status_code == 2001270690:
         request.session['message'] = ""
         return render(request, 'stock_info.html', stock_data[0])
     else:
